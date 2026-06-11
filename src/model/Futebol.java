@@ -3,10 +3,12 @@ package model;
 import enums.Modalidade;
 import enums.Nivel;
 
+// HERANCA: Futebol herda os atributos e métodos da superclasse Esporte.
 public class Futebol extends Esporte {
     private String tamanhoCampo;
     private int qtdReservas;
 
+    // Construtor da subclasse, chamando o construtor da superclasse com super.
     public Futebol(String nome, int numJogadores, int duracaoMin, Modalidade modalidade, Nivel nivel,
                    String tamanhoCampo, int qtdReservas) {
         super(nome, numJogadores, duracaoMin, modalidade, nivel);
@@ -14,15 +16,18 @@ public class Futebol extends Esporte {
         this.qtdReservas = qtdReservas;
     }
 
+    // OVERRIDE: define como uma partida de futebol começa.
     @Override
     public void iniciarPartida() {
         System.out.println("A partida de futebol começou com o apito do juiz!");
     }
 
+    // OVERLOAD: inicia a partida considerando tempo de prorrogação.
     public void iniciarPartida(int prorrogacaoMin) {
         System.out.println("A partida começou e terá " + prorrogacaoMin + " minutos de prorrogação.");
     }
 
+    // OVERRIDE: exibe as regras herdadas e também os dados próprios do futebol.
     @Override
     public void exibirRegras() {
         super.exibirRegras();

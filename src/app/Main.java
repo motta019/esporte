@@ -4,6 +4,7 @@ import enums.Modalidade;
 import enums.Nivel;
 import model.Futebol;
 
+// Classe principal usada para testar o projeto.
 public class Main {
     public static void main(String[] args) {
 

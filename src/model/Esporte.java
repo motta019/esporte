@@ -3,6 +3,7 @@ package model;
 import enums.Modalidade;
 import enums.Nivel;
 
+// CLASSE ABSTRATA: representa um esporte genérico.
 public abstract class Esporte {
     private String nome;
     private int numJogadores;
@@ -10,6 +11,7 @@ public abstract class Esporte {
     private Modalidade modalidade; // ENUM
     private Nivel nivel; // ENUM
 
+    // Construtor que recebe todos os dados do esporte.
     public Esporte(String nome, int numJogadores, int duracaoMin, Modalidade modalidade, Nivel nivel) {
         this.nome = nome;
         this.numJogadores = numJogadores;
@@ -18,12 +20,15 @@ public abstract class Esporte {
         this.nivel = nivel;
     }
 
+    // Método abstrato que obriga as subclasses a definirem como a partida inicia.
     public abstract void iniciarPartida();
 
+    // Método concreto que mostra uma mensagem geral sobre o esporte.
     public void apresentarEsporte() {
         System.out.println("O esporte " + nome + " possui " + numJogadores + " jogadores.");
     }
 
+    // Método concreto de exibição das regras e informações principais.
     public void exibirRegras() {
         System.out.println("Nome: " + nome);
         System.out.println("Número de jogadores: " + numJogadores);
